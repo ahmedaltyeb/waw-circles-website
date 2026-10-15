@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Generated build output (rebuild with `npm run build` in website/)
+website/dist/
+website/dist-demo/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Unverified media: rights/purpose not confirmed (docs/ASSET_INVENTORY.md IMG-01)
+# Company profile PDF: temporarily excluded pending decision on version-controlling it
+Waw_Circles_Profile_V2.pdf
+WhatsApp Image *.jpeg
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

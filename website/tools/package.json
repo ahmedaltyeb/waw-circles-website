@@ -1,0 +1,3 @@
+{ "name": "waw-tools", "private": true, "type": "module",
+  "description": "Optional asset tooling (hero video generator). Not needed to build or run the site.",
+  "devDependencies": { "@napi-rs/canvas": "^0.1.65", "ffmpeg-static": "^5.2.0" } }

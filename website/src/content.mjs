@@ -1,0 +1,478 @@
+// All public copy lives here, one block per locale. Edit text here, then run `npm run build`.
+// Sources: waw.md, docs/CONTENT_SPECIFICATION.md. Arabic is a working draft that needs native review (PRD D03).
+
+export const company = {
+  legal: 'Waw Circles Technologies FZE LLC',
+  legalAr: 'واو سيركلز للتقنيات',
+  email: 'wawcircles.tech@outlook.com',
+  licence: '4431661.01',
+  address: { en: 'Business Centre, Sharjah Publishing City Free Zone, Sharjah, United Arab Emirates', ar: 'مركز الأعمال، المنطقة الحرة لمدينة الشارقة للنشر، الشارقة، الإمارات العربية المتحدة' },
+};
+
+// Set publish:false to hide an entry from the whole site until its facts are approved (PRD D07).
+export const products = [
+  { id: 'sales', publish: true, href: 'p-sales' },
+  { id: 'pharmacy', publish: true, href: 'p-pharmacy' },
+  { id: 'waw', publish: true, href: 'p-waw' },
+];
+
+// Names supplied in waw.md. type: 'app' is confirmed; 'project' means the exact type is not yet confirmed.
+// ALL UNPUBLISHED: no written client permission or supporting evidence is on record (PRD D05, docs/ASSET_INVENTORY.md).
+// While every record is publish:false the Projects page, nav/footer links, home section and sitemap entry are not generated.
+// Set publish:true per project only after permission and evidence are documented; the projects copy below
+// (lead, meta description, home projectsText) claims delivery and must be re-reviewed at that point.
+export const projects = [
+  { id: 'hajin', publish: false, type: 'app', name: { en: 'Hajin Al Khaleej', ar: 'هجن الخليج' } },
+  { id: 'baytech', publish: false, type: 'app', name: { en: 'Baytech', ar: 'Baytech' } },
+  { id: 'flowrz', publish: false, type: 'project', name: { en: 'Flowrz', ar: 'Flowrz' } },
+  { id: 'mohmaina', publish: false, type: 'project', name: { en: 'Mohmaina', ar: 'Mohmaina' } },
+  { id: 'parking', publish: false, type: 'project', name: { en: 'barking me', ar: 'barking me' } },
+];
+
+// Social accounts. Paste each full https:// URL, then `npm run build`. Empty url = not shown.
+// Only add accounts the company owns and has verified (docs/ASSET_INVENTORY.md).
+export const social = [
+  { id: 'linkedin', url: '' },
+  { id: 'instagram', url: '' },
+  { id: 'x', url: '' },
+  { id: 'facebook', url: '' },
+  { id: 'youtube', url: '' },
+  { id: 'tiktok', url: '' },
+  { id: 'whatsapp', url: '' }, // e.g. https://wa.me/9715XXXXXXXX
+];
+
+// Real partners and client quotes go here. Nothing is shown until an entry exists (PRD: no invented proof).
+//   partners:     { name: {en, ar}, logo: 'partners/acme.svg' (file in src/assets/img/), url: 'https://...' }
+//   testimonials: { quote: {en, ar}, name: {en, ar}, role: {en, ar}, company: {en, ar} }  // only with written permission
+export const partners = [];
+export const testimonials = [];
+
+// Placeholder data for `npm run demo` only: lets you review the design. Never included in the normal build.
+export const demoPartners = [1, 2, 3, 4, 5, 6].map((n) => ({ name: { en: 'Partner ' + n, ar: 'شريك ' + n } }));
+export const demoTestimonials = [1, 2, 3].map((n) => ({
+  quote: { en: 'Sample quote ' + n + '. Replace this with a real, approved statement from a client.', ar: 'اقتباس تجريبي ' + n + '. استبدله بعبارة حقيقية ومعتمدة من عميل.' },
+  name: { en: 'Client name', ar: 'اسم العميل' }, role: { en: 'Role', ar: 'المنصب' }, company: { en: 'Company', ar: 'الشركة' },
+}));
+
+export const serviceGroups = [
+  { id: 'think-design', services: ['s01', 's02'] },
+  { id: 'build-connect', services: ['s03', 's04', 's05', 's06', 's07', 's08'] },
+  { id: 'support-continuity', services: ['s09'] },
+];
+
+const L = {
+  en: {
+    lang: 'en', dir: 'ltr', otherLang: 'ar', otherLabel: 'العربية', otherName: 'Switch to Arabic',
+    brandName: 'WAW Circles Technologies',
+    tagline: 'Make your next move a WAW.',
+    taglineSub: 'Ideas. People. Possibilities.',
+    brandLine: 'Connection, by design.',
+    ui: {
+      skip: 'Skip to content', menu: 'Menu', close: 'Close', cta: 'Discuss your project', learnMore: 'Learn more',
+      viewAll: 'See all', readMore: 'Read more', exploreServices: 'Explore services', contactUs: 'Contact us',
+      previous: 'Previous slide', next: 'Next slide', goToSlide: 'Go to slide', pauseSlider: 'Pause slideshow', playSlider: 'Play slideshow',
+      pauseVideo: 'Pause background video', playVideo: 'Play background video', home: 'Home', breadcrumb: 'Breadcrumb',
+      footerNav: 'Explore', footerCompany: 'Company', legalLabel: 'Legal name', licenceLabel: 'Trade licence', emailLabel: 'Email', addressLabel: 'Address',
+      rights: 'All rights reserved.', status: 'Status', stage: 'Stage', youBring: 'What you bring', wawDoes: 'What WAW does',
+      projectType: 'Type', footerServices: 'Services', followUs: 'Follow us', socialOn: 'WAW Circles on', footerContact: 'Contact', backToTop: 'Back to top', writeUs: 'Write to us', scope: 'What it can include', useCases: 'Typical uses', discuss: 'Discuss this service',
+    },
+    nav: [
+      ['services', 'Services'], ['products', 'Products'], ['projects', 'Projects'], ['how', 'How we work'], ['stage', 'Your next stage'], ['about', 'About'],
+    ],
+    meta: {
+      home: ['WAW Circles Technologies | Make your next move a WAW', 'A UAE company building websites, apps and connected systems, with technology consultancy, design and support shaped around your next stage.'],
+      about: ['About WAW Circles Technologies', 'Who we are, what we value and how we work. Waw Circles Technologies FZE LLC, Sharjah Publishing City Free Zone, UAE.'],
+      services: ['Services | WAW Circles Technologies', 'Nine capabilities in three groups: think and design, build and connect, support and continuity.'],
+      'think-design': ['Think & Design | WAW Circles Technologies', 'Product strategy, technology consultancy, customer journey and experience design.'],
+      'build-connect': ['Build & Connect | WAW Circles Technologies', 'Websites, e-commerce, mobile apps, business systems, automation, AI-assisted workflows and QA.'],
+      'support-continuity': ['Support & Continuity | WAW Circles Technologies', 'Technical support, maintenance, updates and continuous improvement within an agreed scope.'],
+      products: ['Products | WAW Circles Technologies', 'Business systems and WAW Circles, our own gifting app, currently in development.'],
+      projects: ['Projects | WAW Circles Technologies', 'Projects delivered by Waw Circles Technologies, including mobile apps.'],
+      how: ['How we work | WAW Circles Technologies', 'Four stages: listen and discover, shape and agree, build and test, launch and improve.'],
+      stage: ['Start, Grow or Improve | WAW Circles Technologies', 'Find the starting point that fits where you are: a new idea, a growing business or an existing system.'],
+      contact: ['Contact | WAW Circles Technologies', 'Tell us about your project. Email wawcircles.tech@outlook.com or use the enquiry form.'],
+      privacy: ['Privacy | WAW Circles Technologies', 'How this website handles the information you send us.'],
+      notfound: ['Page not found | WAW Circles Technologies', 'The page you are looking for could not be found.'],
+    },
+    home: {
+      eyebrow: 'Waw Circles Technologies · UAE',
+      lead: 'From first idea to something people actually use. We design, build and support websites, apps and connected systems, shaped around where your business is going next.',
+      secondary: 'Explore services',
+      partnersTitle: 'Partners and collaborators',
+      partnersText: 'The organisations and technologies we work alongside.',
+      testimonialsTitle: 'What our clients say',
+      testimonialsText: 'In their own words.',
+      sample: 'Sample',
+      demoBanner: 'Design preview: partners and testimonials below are placeholders, not real.',
+      showcaseTitle: 'What we can build for you',
+      showcaseText: 'Concrete work, from first prototype to a system your team uses every day.',
+      showcase: [
+        ['globe', 'Company websites', 'Clear, multilingual websites in Arabic, English and other languages that explain what you do and make it easy to get in touch.', 's03'],
+        ['cart', 'Online stores and portals', 'Catalogues, carts and customer portals built around how your customers buy.', 's03'],
+        ['phone', 'Mobile apps', 'Booking, service and field-tool apps for your customers or your team, from prototype to release.', 's04'],
+        ['chart', 'Business systems', 'Dashboards and operations tools that put the information your team needs in one place.', 's05'],
+        ['link', 'Automation and integrations', 'Connect the tools you already use and remove repeated manual steps.', 's06'],
+        ['check', 'Testing and QA', 'Test the flows that matter before launch and get a clear defect report.', 's08'],
+      ],
+      points: [
+        ['Start where you are', 'A plan, a prototype or a first release, sized to your stage.'],
+        ['Two languages, one build', 'Arabic and English, including right-to-left layouts, from day one.'],
+        ['Support after launch', 'Maintenance and improvement within an agreed scope.'],
+      ],
+      chips: ['Based in Sharjah, UAE', 'Arabic and English, by design', 'Clear scope, clear costs'],
+      marquee: ['Product strategy', 'Experience design', 'Websites and e-commerce', 'Mobile apps', 'Business systems', 'Connected systems and automation', 'AI-assisted workflows', 'Testing and QA', 'Support and improvement'],
+      whyTitle: 'What you get with WAW.',
+      whyText: 'A small set of principles that shape every engagement.',
+      why: [
+        ['Arabic and English, designed together', 'Both languages shape the layout, the copy and the flow from day one, not as a translation at the end.'],
+        ['A starting point that fits', 'Big ambition, sensible first step. We size the first release to your stage so you can grow from a solid base.'],
+        ['One team, from idea to support', 'Strategy, design, build, testing and support in one place, so nothing is lost in handover.'],
+        ['Product thinking of our own', 'We are building WAW Circles, our own app. The same care for people goes into client work.'],
+      ],
+      faqTitle: 'Clear answers. No jargon.',
+      faqText: 'Short answers before the first conversation.',
+      faq: [
+        ['What should I bring to the first conversation?', 'Your goal, who it is for, and anything that already exists, such as designs, a website or a system. A rough idea is enough to begin.'],
+        ['Do you work in Arabic and English?', 'Yes. Websites and apps can be built in Arabic, English and other languages, including right-to-left layouts.'],
+        ['Can you improve something we already have?', 'Yes. IMPROVE is for existing websites, apps and workflows. We look at the current system first, then agree the changes.'],
+        ['How do you agree cost and timing?', 'After we understand your needs, scope, costs and milestones are agreed in writing before build starts. We do not publish fixed prices because every project differs.'],
+        ['Do you support us after launch?', 'Support, maintenance and improvement are available within an agreed scope, set out separately from the build.'],
+        ['What is WAW Circles?', 'Our own gifting app, currently in development. It connects the people who matter, the ideas that suit them, and the circles that make something special happen.'],
+      ],
+      facts: [['9', 'capabilities'], ['4', 'clear stages'], ['3', 'ways to start'], ['2', 'languages, by design']],
+      aboutTitle: 'Technology that fits the people using it.',
+      aboutText: 'Big ambition, a sensible starting point. Clear scope, clear costs, a foundation you can grow. We help businesses move from idea to launch and beyond: think and design the right experience, build and connect the systems, then support and improve after launch.',
+      aboutLink: 'About WAW',
+      servicesTitle: 'Think it. Build it. Keep it growing.',
+      servicesText: 'Three groups, nine capabilities. Use one, or move through all three.',
+      sliderTitle: 'From idea to something people use.',
+      sliderText: 'A look at how our work fits together.',
+      howTitle: 'Listen. Agree. Build. Improve.',
+      howText: 'Four stages, from the first conversation to agreed support after launch.',
+      stageTitle: 'Start. Grow. Improve.',
+      stageText: 'Choose the starting point that matches where you are. These are pathways, not fixed packages.',
+      projectsTitle: 'Work that speaks for itself.',
+      projectsText: 'Work we have delivered, from mobile apps to digital platforms.',
+      productsTitle: 'Products with purpose.',
+      productsText: 'Systems for business operations, and our own gifting app.',
+      contactTitle: 'Make your next move a WAW.',
+      contactText: 'Tell us what you are working on. We will reply by email to talk through a sensible first step.',
+    },
+    slides: [
+      { id: 'think-design', kicker: 'Think & Design', title: 'Find the right first step', text: 'Product strategy, technology consultancy and customer journey design before you commit to a build.', href: 'think-design' },
+      { id: 'build-connect', kicker: 'Build & Connect', title: 'Build it, and connect it', text: 'Websites, mobile apps, business systems and automation, tested before launch.', href: 'build-connect' },
+      { id: 'support-continuity', kicker: 'Support & Continuity', title: 'Keep improving after launch', text: 'Troubleshooting, maintenance, updates and user guidance within an agreed scope.', href: 'support-continuity' },
+      { id: 'waw', kicker: 'In development', title: 'WAW Circles, our gifting app', text: 'It connects the people who matter, the ideas that suit them, and the circles that make something special happen.', href: 'products' },
+    ],
+    about: {
+      h1: 'About WAW',
+      lead: 'Waw Circles Technologies is a UAE company that develops digital products and delivers technology consultancy, design, development and software support.',
+      factsTitle: 'Company details',
+      facts: [['Legal name', 'Waw Circles Technologies FZE LLC'], ['Arabic name', 'واو سيركلز للتقنيات'], ['Country', 'United Arab Emirates'], ['Address', 'Business Centre, Sharjah Publishing City Free Zone, Sharjah'], ['Trade licence', '4431661.01'], ['Email', 'wawcircles.tech@outlook.com'], ['Languages', 'Arabic and English']],
+      valuesTitle: 'What we value',
+      values: [['People first', 'Thoughtful questions and clear decisions, starting with the people who will use what we build.'], ['Purpose in the details', 'Small decisions shape how a product feels. We pay attention to them.'], ['Clear communication', 'Plain language about scope, costs, milestones and what happens next.']],
+      povTitle: 'Websites, apps and systems, shaped around your next stage.',
+      povText: 'We help businesses move from idea to launch and beyond: think and design the right experience, build and connect the systems, then support and improve after launch. Scope and costs are agreed with you before build starts.',
+      bilingualTitle: 'Two languages, one character',
+      bilingualText: 'Arabic and English are designed together from the start, not translated afterwards.',
+    },
+    services: {
+      h1: 'Services',
+      lead: 'We help you think and design the right experience, build and connect the systems, then support and improve after launch.',
+      groups: {
+        'think-design': { title: 'Think & Design', text: 'Product strategy and technology consultancy, plus customer journey and experience design.' },
+        'build-connect': { title: 'Build & Connect', text: 'Websites and e-commerce, mobile apps, business systems, connected systems and automation, AI-assisted workflows where justified, and software testing and QA.' },
+        'support-continuity': { title: 'Support & Continuity', text: 'Technical support and continuous improvement: troubleshooting, maintenance, updates and user guidance within an agreed scope.' },
+      },
+      boundariesTitle: 'Scope is agreed, not assumed',
+      boundariesText: 'What is included, who supplies content and access, and what is outside scope are agreed with you in writing before build starts. We do not publish prices or fixed timelines on this site.',
+    },
+    groupPage: { relatedTitle: 'Other service groups', allServices: 'All services' },
+    svc: {
+      s01: { title: 'Product strategy and technology consultancy', need: 'Clear priorities, feasibility and a sensible first release for founders and decision-makers.', scope: ['Goals and constraints workshop', 'Requirements summary', 'Prioritised roadmap and first-release scope', 'Technology options with trade-offs'], use: ['New product planning', 'Reviewing an existing platform', 'Deciding what to build first'], cta: 'Discuss your idea' },
+      s02: { title: 'Customer journey and experience design', need: 'Clearer onboarding, purchase and support journeys.', scope: ['Journey map', 'Friction assessment', 'User flows and wireframes or prototype', 'Design handover'], use: ['Onboarding', 'Checkout', 'Self-service', 'Support experience'], cta: 'Discuss your customer journey' },
+      s03: { title: 'Websites and e-commerce', need: 'A credible website, or a clearer way to sell online.', scope: ['Page and feature requirements', 'Responsive interface', 'Build, scoped integrations and testing', 'Launch and handover'], use: ['Company website', 'Online store', 'Customer portal', 'Web platform'], cta: 'Discuss your website' },
+      s04: { title: 'Mobile app design and development', need: 'Useful mobile journeys and a feasible first release.', scope: ['User flows and prototype', 'Build for the agreed platforms', 'Integrations and test evidence', 'Release handover'], use: ['Customer-facing mobile service', 'Booking experience', 'Business field tool'], cta: 'Discuss your app' },
+      s05: { title: 'Applications and business systems', need: 'Clearer workflows and easier access to business information.', scope: ['Process and role requirements', 'Application or dashboard', 'Access design and data plan', 'Testing and handover'], use: ['Operations tools', 'Dashboards', 'Web apps', 'Tested prototypes'], cta: 'Discuss your business system' },
+      s06: { title: 'Connected systems and automation', need: 'Fewer repetitive handoffs between disconnected tools.', scope: ['Workflow map', 'Integration feasibility', 'Agreed connectors and exception handling', 'Test plan and handover'], use: ['Moving approved data between tools', 'Reducing manual handoffs', 'Notifications'], cta: 'Discuss your workflow' },
+      s07: { title: 'AI-assisted workflows where justified', need: 'Help with suitable repetitive knowledge tasks, with clear data and review boundaries.', scope: ['Suitability assessment', 'Scoped pilot with evaluation criteria', 'Human review and fallback design', 'Documented limits'], use: ['Draft assistance', 'Document triage (illustrative, subject to suitability)'], cta: 'Explore a suitable workflow' },
+      s08: { title: 'Software testing and quality assurance', need: 'Confidence in agreed critical flows and visibility of defects before release.', scope: ['Scoped test plan', 'Functional, responsive and regression checks', 'Defect report and retest summary', 'Summary of remaining risks'], use: ['Pre-launch review', 'Changed critical flows', 'Existing-app assessment'], cta: 'Discuss testing needs' },
+      s09: { title: 'Technical support, maintenance and continuous improvement', need: 'Help troubleshooting, updating and improving an existing system within agreed boundaries.', scope: ['Initial review', 'Agreed support scope', 'Fixes, updates and verification', 'Handover notes'], use: ['Maintenance', 'Updates', 'Troubleshooting', 'User guidance'], cta: 'Discuss support needs' },
+    },
+    process: {
+      h1: 'How we work',
+      lead: 'Four stages from the first conversation to agreed support after launch. Scope and costs are agreed with you before build starts.',
+      steps: [
+        { n: '01', title: 'Listen & discover', text: 'Understand your goals and users.', bring: 'Goals, users, context, existing systems and constraints.', does: 'Clarifies needs, risks and open questions.' },
+        { n: '02', title: 'Shape & agree', text: 'Agree scope, costs and milestones.', bring: 'Priorities, feedback and a named approver.', does: 'Defines scope, exclusions, costs and milestones with you.' },
+        { n: '03', title: 'Build & test', text: 'Design, develop and review.', bring: 'Approved content, access and consolidated feedback.', does: 'Designs, develops and tests the agreed work, with reviews along the way.' },
+        { n: '04', title: 'Launch & improve', text: 'Handover and agreed support.', bring: 'Acceptance and the accounts needed for release.', does: 'Coordinates release and handover, then agreed support and improvement.' },
+      ],
+      noteTitle: 'What we will not do',
+      note: 'We do not promise fixed prices or timelines before scope is agreed, and we do not guarantee business results. Support after launch is a separate agreement with its own limits.',
+    },
+    stage: {
+      h1: 'Your next stage',
+      lead: 'Three starting points. Pick the one closest to where you are; we will confirm the fit with you.',
+      items: [
+        { id: 'start', label: 'START', title: 'A new idea', text: 'You have an idea and need a sensible next step.', outputs: 'A clear plan, a convincing prototype or a first release.', interest: 'start' },
+        { id: 'grow', label: 'GROW', title: 'Ready for more', text: 'Your business is ready for a stronger digital presence.', outputs: 'Better journeys, connected tools and a more useful online presence.', interest: 'grow' },
+        { id: 'improve', label: 'IMPROVE', title: 'Make what you have work better', text: 'You already have a website, app or workflow that needs the right changes.', outputs: 'An agreed review, targeted changes, testing and handover. We assess the existing system first.', interest: 'improve' },
+      ],
+      note: 'These are pathways, not fixed packages. What is included is agreed after we understand your situation.',
+      cta: 'Discuss your next step',
+    },
+    projects: {
+      h1: 'Projects',
+      lead: 'A selection of projects delivered by WAW.',
+      types: { app: 'Mobile app', project: 'Project' },
+      note: 'More detail on each project, including scope and results, is shared in conversation. Images shown are illustrative and are replaced with approved screenshots.',
+      cta: 'Discuss a similar project',
+    },
+    products: {
+      h1: 'Products',
+      lead: 'Systems for business operations, and WAW Circles, our own gifting app.',
+      items: {
+        sales: { title: 'Sales and accounting systems', text: 'Sales, invoicing, inventory and accounting in one system.', status: 'Ask about this system', cta: 'Ask about this product' },
+        pharmacy: { title: 'Pharmacy management systems', text: 'Pharmacy operations: sales, stock and reporting.', status: 'Ask about this system', cta: 'Ask about this product' },
+        waw: { title: 'WAW Circles', text: 'Our own gifting app. It connects the people who matter, the ideas that suit them, and the circles that make something special happen.', line: 'Care, when we come together.', status: 'In development', cta: 'Ask about WAW Circles' },
+      },
+      note: 'Availability, features and delivery model for each system are confirmed with you in conversation. WAW Circles is not yet released.',
+    },
+    contact: {
+      h1: 'Contact', lead: 'Tell us what you are working on. We will reply by email.',
+      detailsTitle: 'Company details',
+      form: {
+        name: 'Name', email: 'Email', company: 'Company (optional)', interest: 'What are you interested in?', message: 'Message', send: 'Send enquiry',
+        notSure: 'Not sure yet', requiredNote: 'Fields marked * are required.', privacyNote: 'We use these details only to reply to your enquiry. See our',
+        privacyLink: 'privacy notice', errorsTitle: 'Please fix the following',
+        pending: 'Sending your enquiry…', accepted: 'Your enquiry was received.', failure: 'We could not send your enquiry. Please try again or email us.',
+        notConfigured: 'Online sending is not available yet, so your enquiry has not been sent. Your message is still in the form. Please email us directly at', invalidEmail: 'Enter a valid email address.',
+        nameRequired: 'Enter your name.', messageShort: 'Write at least 10 characters.', messageLong: 'Keep your message under 3000 characters.', rate: 'Please wait a moment before trying again.',
+        interestGroups: { general: 'General', services: 'Services', products: 'Products', pathways: 'Starting points' },
+      },
+    },
+    privacy: {
+      h1: 'Privacy notice',
+      banner: 'This notice describes how the website currently works. It is pending final review and will be updated if our setup changes.',
+      sections: [
+        ['Who we are', 'Waw Circles Technologies FZE LLC, Business Centre, Sharjah Publishing City Free Zone, Sharjah, United Arab Emirates. Contact: wawcircles.tech@outlook.com.'],
+        ['What you send us', 'If you use the enquiry form we receive the name, email address, optional company, interest and message you enter. Please do not include sensitive or confidential personal data.'],
+        ['Why we use it', 'To reply to your enquiry and to keep a business record of the conversation.'],
+        ['Cookies and tracking', 'This website does not set advertising or analytics cookies. It stores your language choice in your browser (local storage) so it can open in the right language next time. Fonts are served from this site, not a third party.'],
+        ['Who receives it', 'Enquiries are delivered to our company mailbox through the email service configured for the site, or through your own email app if you use the email option.'],
+        ['Your choices', 'You can ask us what we hold about you, or ask us to correct or delete it, by emailing wawcircles.tech@outlook.com.'],
+      ],
+    },
+    notfound: { h1: 'Page not found', text: 'The page you are looking for does not exist or has moved.', links: 'Where to next' },
+  },
+
+  ar: {
+    lang: 'ar', dir: 'rtl', otherLang: 'en', otherLabel: 'English', otherName: 'التبديل إلى الإنجليزية',
+    brandName: 'واو سيركلز للتقنيات',
+    tagline: 'خطوتك القادمة تستحق «واو».',
+    taglineSub: 'أفكار. أشخاص. إمكانات.',
+    brandLine: 'تواصل، بتصميم مدروس.',
+    ui: {
+      skip: 'انتقل إلى المحتوى', menu: 'القائمة', close: 'إغلاق', cta: 'ناقش مشروعك', learnMore: 'اعرف المزيد',
+      viewAll: 'عرض الكل', readMore: 'اقرأ المزيد', exploreServices: 'استكشف الخدمات', contactUs: 'تواصل معنا',
+      previous: 'الشريحة السابقة', next: 'الشريحة التالية', goToSlide: 'اذهب إلى الشريحة', pauseSlider: 'إيقاف عرض الشرائح مؤقتاً', playSlider: 'تشغيل عرض الشرائح',
+      pauseVideo: 'إيقاف فيديو الخلفية مؤقتاً', playVideo: 'تشغيل فيديو الخلفية', home: 'الرئيسية', breadcrumb: 'مسار التنقل',
+      footerNav: 'استكشف', footerCompany: 'الشركة', legalLabel: 'الاسم القانوني', licenceLabel: 'الرخصة التجارية', emailLabel: 'البريد الإلكتروني', addressLabel: 'العنوان',
+      rights: 'جميع الحقوق محفوظة.', status: 'الحالة', stage: 'المرحلة', youBring: 'ما تقدّمه أنت', wawDoes: 'ما تقوم به واو',
+      projectType: 'النوع', footerServices: 'الخدمات', followUs: 'تابعنا', socialOn: 'واو سيركلز على', footerContact: 'تواصل معنا', backToTop: 'العودة إلى الأعلى', writeUs: 'راسلنا', scope: 'ما يمكن أن يشمله', useCases: 'استخدامات شائعة', discuss: 'ناقش هذه الخدمة',
+    },
+    nav: [
+      ['services', 'الخدمات'], ['products', 'المنتجات'], ['projects', 'المشاريع'], ['how', 'كيف نعمل'], ['stage', 'مرحلتك القادمة'], ['about', 'عن واو'],
+    ],
+    meta: {
+      home: ['واو سيركلز للتقنيات | خطوتك القادمة تستحق «واو»', 'شركة إماراتية تبني المواقع والتطبيقات والأنظمة المترابطة، مع الاستشارات التقنية والتصميم والدعم بما يناسب مرحلتك القادمة.'],
+      about: ['عن واو سيركلز للتقنيات', 'من نحن، وما الذي نقدّره، وكيف نعمل. واو سيركلز للتقنيات FZE LLC، المنطقة الحرة لمدينة الشارقة للنشر.'],
+      services: ['الخدمات | واو سيركلز للتقنيات', 'تسع قدرات في ثلاث مجموعات: نفكّر ونصمّم، نطوّر ونربط، الدعم والاستمرارية.'],
+      'think-design': ['نفكّر ونصمّم | واو سيركلز للتقنيات', 'استراتيجية المنتج والاستشارات التقنية وتصميم رحلة العميل والتجربة.'],
+      'build-connect': ['نطوّر ونربط | واو سيركلز للتقنيات', 'المواقع والمتاجر الإلكترونية وتطبيقات الجوال وأنظمة الأعمال والأتمتة والاختبار.'],
+      'support-continuity': ['الدعم والاستمرارية | واو سيركلز للتقنيات', 'الدعم التقني والصيانة والتحديثات والتحسين المستمر ضمن نطاق متفق عليه.'],
+      products: ['المنتجات | واو سيركلز للتقنيات', 'أنظمة الأعمال وتطبيق «واو سيركلز» للهدايا، وهو قيد التطوير.'],
+      projects: ['المشاريع | واو سيركلز للتقنيات', 'مشاريع نفّذتها واو سيركلز للتقنيات، ومنها تطبيقات الجوال.'],
+      how: ['كيف نعمل | واو سيركلز للتقنيات', 'أربع مراحل: نسمع ونفهم، نخطط ونتفق، نطوّر ونختبر، نطلق ونواصل التحسين.'],
+      stage: ['مرحلتك القادمة: ابدأ، توسّع، حسّن | واو سيركلز للتقنيات', 'اختر نقطة البداية المناسبة: فكرة جديدة، أو نشاط ينمو، أو نظام قائم.'],
+      contact: ['تواصل معنا | واو سيركلز للتقنيات', 'حدّثنا عن مشروعك عبر البريد wawcircles.tech@outlook.com أو نموذج الاستفسار.'],
+      privacy: ['الخصوصية | واو سيركلز للتقنيات', 'كيف يتعامل هذا الموقع مع المعلومات التي ترسلها إلينا.'],
+      notfound: ['الصفحة غير موجودة | واو سيركلز للتقنيات', 'تعذّر العثور على الصفحة المطلوبة.'],
+    },
+    home: {
+      eyebrow: 'واو سيركلز للتقنيات · الإمارات',
+      lead: 'من الفكرة الأولى إلى منتج يستخدمه الناس فعلاً. نصمّم ونبني وندعم المواقع والتطبيقات والأنظمة المترابطة، بما يناسب وجهة عملك القادمة.',
+      secondary: 'استكشف الخدمات',
+      partnersTitle: 'الشركاء والمتعاونون',
+      partnersText: 'الجهات والتقنيات التي نعمل معها.',
+      testimonialsTitle: 'ماذا يقول عملاؤنا',
+      testimonialsText: 'بكلماتهم هم.',
+      sample: 'تجريبي',
+      demoBanner: 'معاينة تصميم: الشركاء والآراء أدناه أمثلة وليست حقيقية.',
+      showcaseTitle: 'ماذا نستطيع أن نبني لك',
+      showcaseText: 'أعمال ملموسة، من النموذج الأولي إلى نظام يستخدمه فريقك كل يوم.',
+      showcase: [
+        ['globe', 'مواقع الشركات', 'مواقع واضحة بعدة لغات، العربية والإنجليزية وغيرهما، تشرح ما تقدّمه وتسهّل التواصل معك.', 's03'],
+        ['cart', 'المتاجر والبوابات الإلكترونية', 'كتالوجات وسلال شراء وبوابات عملاء مبنية حول طريقة شراء عملائك.', 's03'],
+        ['phone', 'تطبيقات الجوال', 'تطبيقات حجز وخدمات وأدوات ميدانية لعملائك أو لفريقك، من النموذج الأولي إلى الإصدار.', 's04'],
+        ['chart', 'أنظمة الأعمال', 'لوحات متابعة وأدوات تشغيل تجمع المعلومات التي يحتاجها فريقك في مكان واحد.', 's05'],
+        ['link', 'الأتمتة والتكامل', 'اربط الأدوات التي تستخدمها اليوم وأزل الخطوات اليدوية المتكررة.', 's06'],
+        ['check', 'الاختبار وضمان الجودة', 'اختبر المسارات المهمة قبل الإطلاق واحصل على تقرير واضح بالعيوب.', 's08'],
+      ],
+      points: [
+        ['ابدأ من حيث أنت', 'خطة أو نموذج أولي أو إصدار أول، بحجم يناسب مرحلتك.'],
+        ['لغتان في بناء واحد', 'العربية والإنجليزية، بما في ذلك التخطيط من اليمين إلى اليسار، منذ اليوم الأول.'],
+        ['دعم بعد الإطلاق', 'صيانة وتحسين ضمن نطاق متفق عليه.'],
+      ],
+      chips: ['من الشارقة، الإمارات', 'العربية والإنجليزية بالتصميم', 'نطاق واضح وتكاليف واضحة'],
+      marquee: ['استراتيجية المنتج', 'تصميم التجربة', 'المواقع والمتاجر الإلكترونية', 'تطبيقات الجوال', 'أنظمة الأعمال', 'ربط الأنظمة والأتمتة', 'إجراءات عمل بالذكاء الاصطناعي', 'الاختبار وضمان الجودة', 'الدعم والتحسين'],
+      whyTitle: 'ماذا تحصل مع واو.',
+      whyText: 'مبادئ قليلة تحكم كل تعاون.',
+      why: [
+        ['العربية والإنجليزية بتصميم واحد', 'تُشكّل اللغتان التخطيط والنصوص والمسارات منذ اليوم الأول، لا كترجمة في النهاية.'],
+        ['نقطة بداية تناسبك', 'طموح كبير وخطوة أولى معقولة. نُحجّم الإصدار الأول بما يناسب مرحلتك لتنمو من أساس متين.'],
+        ['فريق واحد من الفكرة إلى الدعم', 'الاستراتيجية والتصميم والتطوير والاختبار والدعم في مكان واحد، فلا يضيع شيء عند التسليم.'],
+        ['تفكير منتجات خاص بنا', 'نبني «واو سيركلز»، تطبيقنا الخاص. والعناية نفسها بالناس نضعها في أعمال عملائنا.'],
+      ],
+      faqTitle: 'إجابات واضحة. بلا تعقيد.',
+      faqText: 'إجابات مختصرة قبل أول حديث.',
+      faq: [
+        ['ماذا أُحضر معي إلى أول حديث؟', 'هدفك، ومن تستهدف، وأي شيء قائم لديك مثل التصاميم أو موقع أو نظام. تكفي فكرة أولية للبدء.'],
+        ['هل تعملون بالعربية والإنجليزية؟', 'نعم. يمكن بناء المواقع والتطبيقات بالعربية والإنجليزية ولغات أخرى، بما في ذلك التخطيط من اليمين إلى اليسار.'],
+        ['هل تستطيعون تحسين شيء لدينا بالفعل؟', 'نعم. مسار «حسّن» مخصص للمواقع والتطبيقات وإجراءات العمل القائمة. ننظر في النظام الحالي أولاً ثم نتفق على التغييرات.'],
+        ['كيف نتفق على التكلفة والمدة؟', 'بعد أن نفهم احتياجك نتفق كتابةً على النطاق والتكاليف والمراحل قبل بدء التنفيذ. لا ننشر أسعاراً ثابتة لأن كل مشروع يختلف.'],
+        ['هل تقدّمون الدعم بعد الإطلاق؟', 'الدعم والصيانة والتحسين متاحة ضمن نطاق متفق عليه، يُحدَّد بشكل منفصل عن التنفيذ.'],
+        ['ما هو واو سيركلز؟', 'تطبيقنا الخاص للهدايا، وهو قيد التطوير. يربط بين الأشخاص المهمين في حياتك، والأفكار التي تناسبهم، والدوائر التي تصنع لحظة مميزة.'],
+      ],
+      facts: [['9', 'قدرات'], ['4', 'مراحل واضحة'], ['3', 'طرق للبدء'], ['2', 'لغتان بالتصميم']],
+      aboutTitle: 'تقنية تناسب من يستخدمها.',
+      aboutText: 'طموح كبير ونقطة بداية معقولة. نطاق واضح وتكاليف واضحة وأساس تستطيع البناء عليه. نساعد الأعمال على الانتقال من الفكرة إلى الإطلاق وما بعده: نفكّر ونصمّم التجربة المناسبة، ونطوّر الأنظمة ونربطها، ثم ندعم ونحسّن بعد الإطلاق.',
+      aboutLink: 'عن واو',
+      servicesTitle: 'نفكّر. نبني. ونواصل النمو.',
+      servicesText: 'ثلاث مجموعات وتسع قدرات. استخدم إحداها أو انتقل عبرها جميعاً.',
+      sliderTitle: 'من الفكرة إلى شيء يستخدمه الناس.',
+      sliderText: 'نظرة على كيف يتكامل عملنا.',
+      howTitle: 'نسمع. نتفق. نبني. نحسّن.',
+      howText: 'أربع مراحل، من أول حديث إلى دعم متفق عليه بعد الإطلاق.',
+      stageTitle: 'ابدأ. توسّع. حسّن.',
+      stageText: 'اختر نقطة البداية التي تناسب وضعك. هذه مسارات وليست باقات ثابتة.',
+      projectsTitle: 'أعمال تتحدث عن نفسها.',
+      projectsText: 'أعمال نفّذناها، من تطبيقات الجوال إلى المنصات الرقمية.',
+      productsTitle: 'منتجات لها هدف.',
+      productsText: 'أنظمة لتشغيل الأعمال، وتطبيقنا الخاص للهدايا.',
+      contactTitle: 'خطوتك القادمة تستحق «واو».',
+      contactText: 'حدّثنا عمّا تعمل عليه. سنردّ عليك بالبريد الإلكتروني لنتحدث عن خطوة أولى مناسبة.',
+    },
+    slides: [
+      { id: 'think-design', kicker: 'نفكّر ونصمّم', title: 'اعثر على الخطوة الأولى المناسبة', text: 'استراتيجية المنتج والاستشارات التقنية وتصميم رحلة العميل قبل الالتزام بالبناء.', href: 'think-design' },
+      { id: 'build-connect', kicker: 'نطوّر ونربط', title: 'نبنيه ونربطه', text: 'مواقع وتطبيقات جوال وأنظمة أعمال وأتمتة، تُختبر قبل الإطلاق.', href: 'build-connect' },
+      { id: 'support-continuity', kicker: 'الدعم والاستمرارية', title: 'نواصل التحسين بعد الإطلاق', text: 'معالجة الأعطال والصيانة والتحديثات وإرشاد المستخدمين ضمن نطاق متفق عليه.', href: 'support-continuity' },
+      { id: 'waw', kicker: 'قيد التطوير', title: 'واو سيركلز، تطبيقنا للهدايا', text: 'يربط بين الأشخاص المهمين في حياتك، والأفكار التي تناسبهم، والدوائر التي تصنع لحظة مميزة.', href: 'products' },
+    ],
+    about: {
+      h1: 'عن واو',
+      lead: 'واو سيركلز للتقنيات شركة إماراتية تطوّر منتجات رقمية وتقدّم الاستشارات التقنية والتصميم والتطوير والدعم البرمجي.',
+      factsTitle: 'بيانات الشركة',
+      facts: [['الاسم القانوني', 'Waw Circles Technologies FZE LLC'], ['الاسم بالعربية', 'واو سيركلز للتقنيات'], ['الدولة', 'الإمارات العربية المتحدة'], ['العنوان', 'مركز الأعمال، المنطقة الحرة لمدينة الشارقة للنشر، الشارقة'], ['الرخصة التجارية', '4431661.01'], ['البريد الإلكتروني', 'wawcircles.tech@outlook.com'], ['اللغات', 'العربية والإنجليزية']],
+      valuesTitle: 'ما نقدّره',
+      values: [['الإنسان أولاً', 'أسئلة مدروسة وقرارات واضحة، تبدأ ممّن سيستخدم ما نبنيه.'], ['قيمة في التفاصيل', 'القرارات الصغيرة تصنع إحساس المنتج. ونحن نعتني بها.'], ['تواصل واضح', 'لغة بسيطة عن النطاق والتكاليف والمراحل وما سيحدث بعد ذلك.']],
+      povTitle: 'مواقع وتطبيقات وأنظمة، بما يناسب مرحلتك القادمة.',
+      povText: 'نساعد الأعمال على الانتقال من الفكرة إلى الإطلاق وما بعده: نفكّر ونصمّم التجربة المناسبة، ونطوّر الأنظمة ونربطها، ثم ندعم ونحسّن بعد الإطلاق. ونتفق معك على النطاق والتكاليف قبل بدء التنفيذ.',
+      bilingualTitle: 'لغتان بشخصية واحدة',
+      bilingualText: 'نصمّم العربية والإنجليزية معاً منذ البداية، لا كترجمة لاحقة.',
+    },
+    services: {
+      h1: 'الخدمات',
+      lead: 'نساعدك على التفكير في التجربة المناسبة وتصميمها، وتطوير الأنظمة وربطها، ثم الدعم والتحسين بعد الإطلاق.',
+      groups: {
+        'think-design': { title: 'نفكّر ونصمّم', text: 'استراتيجية المنتج والاستشارات التقنية، إلى جانب تصميم رحلة العميل والتجربة.' },
+        'build-connect': { title: 'نطوّر ونربط', text: 'المواقع والمتاجر الإلكترونية، وتطبيقات الجوال، وأنظمة الأعمال، وربط الأنظمة والأتمتة، وإجراءات العمل المدعومة بالذكاء الاصطناعي عند الحاجة، واختبار البرمجيات وضمان الجودة.' },
+        'support-continuity': { title: 'الدعم والاستمرارية', text: 'الدعم التقني والتحسين المستمر: معالجة الأعطال والصيانة والتحديثات وإرشاد المستخدمين ضمن نطاق متفق عليه.' },
+      },
+      boundariesTitle: 'النطاق يُتفق عليه ولا يُفترض',
+      boundariesText: 'ما الذي يشمله العمل، ومن يوفّر المحتوى والصلاحيات، وما هو خارج النطاق، كلها أمور نتفق عليها معك كتابةً قبل بدء التنفيذ. لا ننشر أسعاراً أو مدداً زمنية ثابتة في هذا الموقع.',
+    },
+    groupPage: { relatedTitle: 'مجموعات خدمات أخرى', allServices: 'جميع الخدمات' },
+    svc: {
+      s01: { title: 'استراتيجية المنتج والاستشارات التقنية', need: 'أولويات واضحة، وجدوى مدروسة، وإصدار أول مناسب للمؤسسين وصنّاع القرار.', scope: ['ورشة الأهداف والقيود', 'ملخص المتطلبات', 'خارطة طريق مرتبة الأولويات ونطاق الإصدار الأول', 'خيارات تقنية مع الموازنة بينها'], use: ['تخطيط منتج جديد', 'مراجعة منصة قائمة', 'تحديد ما يُبنى أولاً'], cta: 'ناقش فكرتك' },
+      s02: { title: 'رحلة العميل وتصميم التجربة', need: 'رحلات تسجيل وشراء ودعم أوضح.', scope: ['خريطة الرحلة', 'تقييم نقاط الاحتكاك', 'مسارات الاستخدام والهياكل أو النموذج الأولي', 'تسليم التصميم'], use: ['التسجيل الأولي', 'الشراء', 'الخدمة الذاتية', 'تجربة الدعم'], cta: 'ناقش رحلة عميلك' },
+      s03: { title: 'المواقع والمتاجر الإلكترونية', need: 'موقع موثوق، أو طريقة أوضح للبيع عبر الإنترنت.', scope: ['متطلبات الصفحات والميزات', 'واجهة متجاوبة', 'التطوير والتكاملات المحددة والاختبار', 'الإطلاق والتسليم'], use: ['موقع شركة', 'متجر إلكتروني', 'بوابة عملاء', 'منصة ويب'], cta: 'ناقش موقعك' },
+      s04: { title: 'تصميم تطبيقات الجوال وتطويرها', need: 'رحلات جوال مفيدة وإصدار أول قابل للتنفيذ.', scope: ['مسارات الاستخدام والنموذج الأولي', 'البناء للمنصات المتفق عليها', 'التكاملات ونتائج الاختبار', 'تسليم الإصدار'], use: ['خدمة جوال موجّهة للعملاء', 'تجربة حجز', 'أداة ميدانية للأعمال'], cta: 'ناقش تطبيقك' },
+      s05: { title: 'التطبيقات وأنظمة الأعمال', need: 'إجراءات أوضح ووصول أسهل لمعلومات العمل.', scope: ['متطلبات الإجراءات والأدوار', 'تطبيق أو لوحة متابعة', 'تصميم الصلاحيات وخطة البيانات', 'الاختبار والتسليم'], use: ['أدوات تشغيلية', 'لوحات متابعة', 'تطبيقات ويب', 'نماذج أولية مختبرة'], cta: 'ناقش نظام أعمالك' },
+      s06: { title: 'تكامل الأنظمة والأتمتة', need: 'تقليل خطوات التسليم المتكررة بين أدوات غير مترابطة.', scope: ['خريطة الإجراءات', 'جدوى التكامل', 'موصّلات متفق عليها ومعالجة الاستثناءات', 'خطة الاختبار والتسليم'], use: ['نقل بيانات معتمدة بين الأدوات', 'تقليل التسليم اليدوي', 'التنبيهات'], cta: 'ناقش إجراءات عملك' },
+      s07: { title: 'إجراءات عمل مدعومة بالذكاء الاصطناعي عند الحاجة', need: 'دعم لمهام معرفية متكررة مناسبة، بحدود واضحة للبيانات والمراجعة.', scope: ['تقييم الملاءمة', 'تجربة محددة بمعايير تقييم', 'مراجعة بشرية وتصميم بدائل', 'حدود موثقة'], use: ['المساعدة في المسودات', 'فرز المستندات (أمثلة توضيحية حسب الملاءمة)'], cta: 'ناقش إجراء عمل مناسباً' },
+      s08: { title: 'اختبار البرمجيات وضمان الجودة', need: 'ثقة في المسارات الحرجة المتفق عليها ورؤية للعيوب قبل الإصدار.', scope: ['خطة اختبار محددة', 'فحوصات وظيفية ومتجاوبة وانحدارية', 'تقرير العيوب وملخص إعادة الاختبار', 'ملخص المخاطر المتبقية'], use: ['مراجعة قبل الإطلاق', 'مسارات حرجة تغيّرت', 'تقييم تطبيق قائم'], cta: 'ناقش احتياجات الاختبار' },
+      s09: { title: 'الدعم التقني والصيانة والتحسين المستمر', need: 'مساعدة في معالجة الأعطال وتحديث نظام قائم وتحسينه ضمن حدود متفق عليها.', scope: ['مراجعة أولية', 'نطاق دعم متفق عليه', 'إصلاحات وتحديثات وتحقق', 'ملاحظات التسليم'], use: ['الصيانة', 'التحديثات', 'معالجة الأعطال', 'إرشاد المستخدمين'], cta: 'ناقش احتياجات الدعم' },
+    },
+    process: {
+      h1: 'كيف نعمل',
+      lead: 'أربع مراحل من أول حديث إلى دعم متفق عليه بعد الإطلاق. نتفق معك على النطاق والتكاليف قبل بدء التنفيذ.',
+      steps: [
+        { n: '01', title: 'نسمع ونفهم', text: 'نفهم أهدافك ومستخدميك.', bring: 'الأهداف والمستخدمون والسياق والأنظمة القائمة والقيود.', does: 'توضيح الاحتياجات والمخاطر والأسئلة المفتوحة.' },
+        { n: '02', title: 'نخطط ونتفق', text: 'نتفق على النطاق والتكاليف والمراحل.', bring: 'الأولويات والملاحظات وشخص معتمد للموافقة.', does: 'تحديد النطاق والاستثناءات والتكاليف والمراحل معك.' },
+        { n: '03', title: 'نطوّر ونختبر', text: 'نصمّم ونطوّر ونراجع.', bring: 'المحتوى المعتمد والصلاحيات وملاحظات مجمّعة.', does: 'تصميم العمل المتفق عليه وتطويره واختباره، مع مراجعات خلال الطريق.' },
+        { n: '04', title: 'نطلق ونواصل التحسين', text: 'التسليم والدعم المتفق عليه.', bring: 'الموافقة والحسابات اللازمة للإصدار.', does: 'تنسيق الإصدار والتسليم، ثم الدعم والتحسين المتفق عليهما.' },
+      ],
+      noteTitle: 'ما لا نفعله',
+      note: 'لا نعد بأسعار أو مدد زمنية ثابتة قبل الاتفاق على النطاق، ولا نضمن نتائج تجارية. الدعم بعد الإطلاق اتفاق منفصل بحدوده الخاصة.',
+    },
+    stage: {
+      h1: 'مرحلتك القادمة',
+      lead: 'ثلاث نقاط بداية. اختر الأقرب إلى وضعك، وسنؤكد معك مدى المناسبة.',
+      items: [
+        { id: 'start', label: 'ابدأ', title: 'فكرة جديدة', text: 'لديك فكرة وتحتاج إلى خطوة تالية مناسبة.', outputs: 'خطة واضحة، أو نموذج أولي مقنع، أو إصدار أول.', interest: 'start' },
+        { id: 'grow', label: 'توسّع', title: 'جاهز للمزيد', text: 'نشاطك جاهز لحضور رقمي أقوى.', outputs: 'رحلات أفضل، وأدوات مترابطة، وحضور إلكتروني أكثر فائدة.', interest: 'grow' },
+        { id: 'improve', label: 'حسّن', title: 'اجعل ما لديك يعمل بشكل أفضل', text: 'لديك موقع أو تطبيق أو إجراء عمل يحتاج إلى التغييرات المناسبة.', outputs: 'مراجعة متفق عليها وتغييرات موجّهة واختبار وتسليم. نقيّم النظام القائم أولاً.', interest: 'improve' },
+      ],
+      note: 'هذه مسارات وليست باقات ثابتة. يُتفق على ما يشمله العمل بعد أن نفهم وضعك.',
+      cta: 'ناقش خطوتك القادمة',
+    },
+    projects: {
+      h1: 'المشاريع',
+      lead: 'مختارات من المشاريع التي نفّذتها واو.',
+      types: { app: 'تطبيق جوال', project: 'مشروع' },
+      note: 'نشارك مزيداً من التفاصيل عن كل مشروع، بما في ذلك النطاق والنتائج، في الحديث المباشر. الصور المعروضة توضيحية وتُستبدل بلقطات شاشة معتمدة.',
+      cta: 'ناقش مشروعاً مشابهاً',
+    },
+    products: {
+      h1: 'المنتجات',
+      lead: 'أنظمة لتشغيل الأعمال، وتطبيق «واو سيركلز» الخاص بنا للهدايا.',
+      items: {
+        sales: { title: 'أنظمة المبيعات والمحاسبة', text: 'المبيعات والفوترة والمخزون والمحاسبة في نظام واحد.', status: 'استفسر عن هذا النظام', cta: 'استفسر عن هذا المنتج' },
+        pharmacy: { title: 'أنظمة إدارة الصيدليات', text: 'عمليات الصيدلية: المبيعات والمخزون والتقارير.', status: 'استفسر عن هذا النظام', cta: 'استفسر عن هذا المنتج' },
+        waw: { title: 'واو سيركلز', text: 'تطبيقنا الخاص للهدايا. يربط بين الأشخاص المهمين في حياتك، والأفكار التي تناسبهم، والدوائر التي تصنع لحظة مميزة.', line: 'الاهتمام، حين يجمعنا.', status: 'قيد التطوير', cta: 'استفسر عن واو سيركلز' },
+      },
+      note: 'تُؤكَّد معك في الحديث توفّر كل نظام وميزاته وطريقة تسليمه. تطبيق «واو سيركلز» لم يُطلق بعد.',
+    },
+    contact: {
+      h1: 'تواصل معنا', lead: 'حدّثنا عمّا تعمل عليه. سنردّ عليك بالبريد الإلكتروني.',
+      detailsTitle: 'بيانات الشركة',
+      form: {
+        // AR-REVIEW (PRD D03): `notConfigured` and the other form states are unreviewed drafts; needs native review.
+        name: 'الاسم', email: 'البريد الإلكتروني', company: 'الشركة (اختياري)', interest: 'بماذا أنت مهتم؟', message: 'الرسالة', send: 'أرسل استفسارك',
+        notSure: 'لست متأكداً بعد', requiredNote: 'الحقول المعلّمة بـ * مطلوبة.', privacyNote: 'نستخدم هذه البيانات للرد على استفسارك فقط. اطّلع على',
+        privacyLink: 'إشعار الخصوصية', errorsTitle: 'يرجى تصحيح ما يلي',
+        pending: 'جارٍ إرسال استفسارك…', accepted: 'تم استلام استفسارك.', failure: 'تعذّر إرسال استفسارك. حاول مرة أخرى أو راسلنا بالبريد الإلكتروني.',
+        notConfigured: 'الإرسال عبر الموقع غير متاح بعد، لذا لم يُرسَل استفسارك. رسالتك ما زالت في النموذج. يرجى مراسلتنا مباشرة على', invalidEmail: 'أدخل عنوان بريد إلكتروني صالحاً.',
+        nameRequired: 'أدخل اسمك.', messageShort: 'اكتب 10 أحرف على الأقل.', messageLong: 'اجعل رسالتك أقل من 3000 حرف.', rate: 'يرجى الانتظار قليلاً قبل المحاولة مرة أخرى.',
+        interestGroups: { general: 'عام', services: 'الخدمات', products: 'المنتجات', pathways: 'نقاط البداية' },
+      },
+    },
+    privacy: {
+      h1: 'إشعار الخصوصية',
+      banner: 'يصف هذا الإشعار طريقة عمل الموقع حالياً. وهو بانتظار المراجعة النهائية وسيُحدَّث إذا تغيّر إعدادنا.',
+      sections: [
+        ['من نحن', 'واو سيركلز للتقنيات FZE LLC، مركز الأعمال، المنطقة الحرة لمدينة الشارقة للنشر، الشارقة، الإمارات العربية المتحدة. للتواصل: wawcircles.tech@outlook.com.'],
+        ['ما ترسله إلينا', 'إذا استخدمت نموذج الاستفسار فإننا نستلم الاسم والبريد الإلكتروني والشركة (اختيارياً) والاهتمام والرسالة التي تدخلها. يرجى عدم تضمين بيانات شخصية حساسة أو سرية.'],
+        ['لماذا نستخدمها', 'للرد على استفسارك ولحفظ سجل عمل للمحادثة.'],
+        ['ملفات الارتباط والتتبع', 'لا يضع هذا الموقع ملفات ارتباط إعلانية أو تحليلية. يحفظ اختيارك للغة في متصفحك (التخزين المحلي) ليفتح بالغة المناسبة في المرة القادمة. الخطوط تُقدَّم من هذا الموقع وليس من طرف ثالث.'],
+        ['من يستلمها', 'تُسلَّم الاستفسارات إلى بريد الشركة عبر خدمة البريد المهيأة للموقع، أو عبر تطبيق البريد لديك إذا استخدمت خيار البريد الإلكتروني.'],
+        ['خياراتك', 'يمكنك أن تسألنا عمّا نحتفظ به عنك، أو أن تطلب تصحيحه أو حذفه، بمراسلتنا على wawcircles.tech@outlook.com.'],
+      ],
+    },
+    notfound: { h1: 'الصفحة غير موجودة', text: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.', links: 'إلى أين تتجه؟' },
+  },
+};
+
+export default L;

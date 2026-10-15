@@ -1,0 +1,5 @@
+/* Styles for the two standalone root pages (/index.html language redirect and /404.html fallback). */
+body { font-family: system-ui, sans-serif; background: #052E30; color: #F4F7F5; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+a { color: #FFC75B; margin: 0 .75rem; }
+.r-lang a { font-size: 1.25rem; }
+.r-404 { text-align: center; }
