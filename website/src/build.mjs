@@ -323,9 +323,10 @@ const pages = {};
 
 pages.home = (c) => {
   const { t } = c; const h = t.home;
-  const vid = firstExisting('video/hero', ['mp4']);
-  const webm = firstExisting('video/hero', ['webm']);
-  const poster = firstExisting('img/hero-poster', ['jpg', 'webp', 'png']);
+  // Owner-supplied hero-section.* files take precedence over the generated brand loop (hero.* / hero-poster.*).
+  const vid = firstExisting('video/hero-section', ['mp4']) || firstExisting('video/hero', ['mp4']);
+  const webm = firstExisting('video/hero-section', ['webm']) || firstExisting('video/hero', ['webm']);
+  const poster = firstExisting('img/hero-section-poster', ['jpg', 'webp', 'png']) || firstExisting('img/hero-poster', ['jpg', 'webp', 'png']);
   const video = vid || webm ? `<video class="hero-video" muted loop playsinline preload="none"${poster ? ` poster="${c.asset(poster)}"` : ''} aria-hidden="true" data-video>${webm ? `<source src="${c.asset(webm)}" type="video/webm">` : ''}${vid ? `<source src="${c.asset(vid)}" type="video/mp4">` : ''}</video>` : '';
   const toggle = video ? `<button type="button" class="vid-toggle" data-vid-toggle data-pause="${esc(t.ui.pauseVideo)}" data-play="${esc(t.ui.playVideo)}" aria-label="${esc(t.ui.pauseVideo)}"><span aria-hidden="true">❚❚</span></button>` : '';
   return `<section class="hero">
